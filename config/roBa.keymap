@@ -62,6 +62,27 @@
             bindings = <&to 0 &macro_param_1to1 &kp MACRO_PLACEHOLDER>;
             label = "TO_LAYER_0";
         };
+
+        trans_exit_AML: trans_exit_AML {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&trans &to 0>;
+            label = "TRANS_EXIT_AML";
+        };
+
+        mkp_exit_AML: mkp_exit_AML {
+            compatible = "zmk,behavior-macro-one-param";
+            #binding-cells = <1>;
+            bindings =
+                <&macro_press>,
+                <&macro_param_1to1 &mkp MACRO_PLACEHOLDER>,
+                <&macro_pause_for_release>,
+                <&macro_release>,
+                <&macro_param_1to1 &mkp MACRO_PLACEHOLDER>,
+                <&macro_tap>,
+                <&sl 4>;
+            label = "MKP_EXIT_AML";
+        };
     };
 
     behaviors {
@@ -120,10 +141,10 @@
 
         MOUSE {
             bindings = <
-&trans  &trans  &trans  &trans  &trans                      &trans  &trans    &trans    &trans    &trans
-&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &mkp MB1  &mkp MB3  &mkp MB2  &trans
-&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans    &trans    &trans    &trans
-&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans                                &trans
+&trans_exit_AML  &trans_exit_AML  &trans_exit_AML  &trans_exit_AML           &trans_exit_AML                                           &trans_exit_AML    &trans_exit_AML      &kp LC(T)          &trans_exit_AML      &mo 5
+&trans_exit_AML  &trans_exit_AML  &trans_exit_AML  &trans_exit_AML           &trans_exit_AML  &trans                        &kp LC(V)  &kp LC(LS(TAB))  &mkp_exit_AML MB1  &mkp_exit_AML MB3  &mkp_exit_AML MB2  &kp LC(TAB)
+&trans_exit_AML  &trans_exit_AML  &trans_exit_AML  &trans_exit_AML           &trans_exit_AML  &trans                        &kp LC(C)  &trans_exit_AML    &mkp MB4           &kp LC(W)          &mkp MB5           &trans
+&trans         &trans         &trans         &trans_exit_AML  &trans         &trans_exit_AML      &trans     &trans                                                                    &trans
             >;
         };
 
