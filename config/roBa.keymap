@@ -63,13 +63,6 @@
             label = "TO_LAYER_0";
         };
 
-        trans_exit_AML: trans_exit_AML {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&trans &to 0>;
-            label = "TRANS_EXIT_AML";
-        };
-
         mkp_exit_AML: mkp_exit_AML {
             compatible = "zmk,behavior-macro-one-param";
             #binding-cells = <1>;
@@ -81,6 +74,7 @@
                 <&macro_param_1to1 &mkp MACRO_PLACEHOLDER>,
                 <&macro_tap>,
                 <&sl 4>;
+
             label = "MKP_EXIT_AML";
         };
     };
@@ -141,10 +135,10 @@
 
         MOUSE {
             bindings = <
-&trans_exit_AML  &trans_exit_AML  &trans_exit_AML  &trans_exit_AML           &trans_exit_AML                                           &trans_exit_AML    &trans_exit_AML      &kp LC(T)          &trans_exit_AML      &mo 5
-&trans_exit_AML  &trans_exit_AML  &trans_exit_AML  &trans_exit_AML           &trans_exit_AML  &trans                        &kp LC(V)  &kp LC(LS(TAB))  &mkp_exit_AML MB1  &mkp_exit_AML MB3  &mkp_exit_AML MB2  &kp LC(TAB)
-&trans_exit_AML  &trans_exit_AML  &trans_exit_AML  &trans_exit_AML           &trans_exit_AML  &trans                        &kp LC(C)  &trans_exit_AML    &mkp MB4           &kp LC(W)          &mkp MB5           &trans
-&trans         &trans         &trans         &trans_exit_AML  &trans         &trans_exit_AML      &trans     &trans                                                                    &trans
+&to_layer_0 Q  &to_layer_0 W  &to_layer_0 E  &to_layer_0 R           &to_layer_0 T                                           &to_layer_0 Y    &to_layer_0 U      &kp LC(T)          &to_layer_0 O      &mo 5
+&to_layer_0 A  &to_layer_0 S  &to_layer_0 D  &to_layer_0 F           &to_layer_0 G  &trans                        &kp LC(V)  &kp LC(LS(TAB))  &mkp_exit_AML MB1  &mkp_exit_AML MB3  &mkp_exit_AML MB2  &kp LC(TAB)
+&to_layer_0 Z  &to_layer_0 X  &to_layer_0 C  &to_layer_0 V           &to_layer_0 B  &trans                        &kp LC(C)  &to_layer_0 N    &mkp MB4           &kp LC(W)          &mkp MB5           &trans
+&trans         &trans         &trans         &to_layer_0 LANGUAGE_1  &trans         &to_layer_0 LANGUAGE_2      &trans     &trans                                                                    &trans
             >;
         };
 
