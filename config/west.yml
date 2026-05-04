@@ -4,13 +4,15 @@ manifest:
       url-base: https://github.com/zmkfirmware
     - name: kumamuk-git
       url-base: https://github.com/kumamuk-git
+    - name: Masami4711
+      url-base: https://github.com/Masami4711
   projects:
     - name: zmk
       remote: zmkfirmware
       revision: v0.3-branch
       import: app/west.yml
     - name: zmk-pmw3610-driver
-      remote: kumamuk-git
+      remote: Masami4711
       revision: main
   self:
     path: config
