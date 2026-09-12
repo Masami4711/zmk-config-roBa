@@ -9,7 +9,7 @@
 };
 
 &trackball {
-    automouse-layer = <3>;   // MOUSE layer
+    // automouse-layer = <3>;   // MOUSE layer
     scroll-layers = <4>;     // SCROLL layer
 
     // arrows {
@@ -28,6 +28,21 @@
 / {
     combos {
         compatible = "zmk,combos";
+
+        MKP_MB1 {
+            bindings = <&mkp MB1>;
+            key-positions = <18 19>;
+        };
+
+        MKP_MB2 {
+            bindings = <&mkp MB2>;
+            key-positions = <19 20>;
+        };
+
+        MKP_MB3 {
+            bindings = <&mkp MB3>;
+            key-positions = <18 20>;
+        };
 
         MO6 {
             bindings = <&mo 5>;
@@ -61,18 +76,18 @@
         default_layer {
             bindings = <
 &kp Q             &kp W         &kp E         &kp R             &kp T                                                    &kp Y          &kp U  &lt 4 I    &kp O    &kp P
-&kp A             &kp S         &kp D         &kp F             &kp G                      &kp GRAVE        &kp EQUAL    &kp H          &kp J  &kp K      &kp L    &lt 3 SQT
-&mt LEFT_SHIFT Z  &kp X         &kp C         &kp V             &kp B                      &kp SEMI         &kp MINUS    &kp N          &kp M  &kp COMMA  &kp DOT  &kp SLASH
+&kp A             &kp S         &kp D         &kp F             &kp G                      &kp GRAVE        &kp MINUS    &kp H          &kp J  &kp K      &kp L    &lt 3 SQT
+&mt LEFT_SHIFT Z  &kp X         &kp C         &kp V             &kp B                      &kp SEMI         &kp EQUAL    &kp N          &kp M  &kp COMMA  &kp DOT  &kp SLASH
 &kp LCTRL         &kp LEFT_WIN  &kp LEFT_ALT  &lt 2 LANGUAGE_2  &mt LEFT_SHIFT LANGUAGE_1  &lt 1 SPACE      &lt 1 ENTER  &kp BACKSPACE                             &kp DEL
             >;
         };
 
         ARROW_AND_NUM {
             bindings = <
-&kp PAGE_UP      &kp HOME        &kp UP_ARROW    &kp END          &kp PAGE_DOWN                              &kp F2    &kp NUMBER_7  &kp NUMBER_8  &kp N9        &kp N0
-&kp LC(LEFT)     &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT_ARROW  &kp LC(RIGHT)  &msc SCRL_UP        &trans  &kp LBKT  &kp NUMBER_4  &kp NUMBER_5  &kp NUMBER_6  &kp RBKT
-&kp LS(LA(TAB))  &kp LS(TAB)     &kp ESC         &kp TAB          &kp LA(TAB)    &msc SCRL_DOWN      &trans  &kp N0    &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp BSLH
-&trans           &trans          &trans          &trans           &trans         &trans              &trans  &trans                                              &trans
+&kp PAGE_UP                 &kp HOME        &kp UP_ARROW    &kp END          &kp PAGE_DOWN                              &kp F2    &kp NUMBER_7  &kp NUMBER_8  &kp N9        &kp N0
+&kp LC(LEFT)                &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT_ARROW  &kp LC(RIGHT)  &msc SCRL_UP        &trans  &kp LBKT  &kp NUMBER_4  &kp NUMBER_5  &kp NUMBER_6  &kp RBKT
+&mt LEFT_SHIFT LS(LA(TAB))  &kp LS(TAB)     &kp ESC         &kp TAB          &kp LA(TAB)    &msc SCRL_DOWN      &trans  &kp N0    &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp BSLH
+&trans                      &trans          &trans          &trans           &trans         &trans              &trans  &trans                                              &trans
             >;
         };
 
